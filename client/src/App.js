@@ -9,13 +9,7 @@ import Header from './components/layout/Header';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 
-// Product Pages
-import Portafolios from './components/products/portafolios/Portafolios';
-import Folders from './components/products/Folders';
-import BindingCases from './components/products/BindingCases';
-import Promocionales from './components/products/Promocionales';
-import Portadores from './components/products/Portadores';
-import Papeleria from './components/products/Papeleria';
+import Producto from './components/products/Producto';
 
 // Info Pages
 import Conozcanos from './components/info/Conozcanos';
@@ -24,6 +18,8 @@ import Pedidos from './components/info/Pedidos';
 import Contactenos from './components/info/Contactenos';
 
 import './App.css';
+
+import productosData from './components/products/data/productosData';
 
 class App extends Component {
   constructor(props) {
@@ -43,24 +39,16 @@ class App extends Component {
             <Header />
             <Navbar />
             <Route exact path='/' component={Home} />
-            <Route
-              exact
-              path='/productos/portafolios'
-              component={Portafolios}
-            />
-            <Route exact path='/productos/folders' component={Folders} />
-            <Route
-              exact
-              path='/productos/bindingcases'
-              component={BindingCases}
-            />
-            <Route
-              exact
-              path='/productos/promocionales'
-              component={Promocionales}
-            />
-            <Route exact path='/productos/portadores' component={Portadores} />
-            <Route exact path='/productos/papeleria' component={Papeleria} />
+            {productosData.map(producto => {
+              return (
+                <Route
+                  exact
+                  path={producto.route}
+                  render={props => <Producto {...props} data={producto} />}
+                  key={producto.route}
+                />
+              );
+            })}
             <Route exact path='/conozcanos' component={Conozcanos} />
             <Route exact path='/faq' component={FAQ} />
             <Route exact path='/pedidos' component={Pedidos} />

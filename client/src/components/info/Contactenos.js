@@ -123,12 +123,12 @@ class Contactenos extends Component {
     const canSubmit = name && company && phone && email && interest && message;
 
     return (
-      <Grid container>
-        <Grid item md>
-          <img src={location} alt='' style={{ width: '70%', marginTop: 20 }} />
+      <Grid container style={{ marginTop: 20 }}>
+        <Grid item md style={{ paddingLeft: 10 }}>
+          <img src={location} alt='' style={{ width: '70%' }} />
         </Grid>
         <Grid item md>
-          <Grid container style={{ marginTop: 20 }} alignItems='center'>
+          <Grid container alignItems='center'>
             <Grid item md={8}>
               <Typography variant='h2'>Contáctenos</Typography>
             </Grid>
