@@ -74,7 +74,7 @@ class Contactenos extends Component {
     const email = this.buildEmail();
 
     axios
-      .post('/contact', {
+      .post('/api/mail/contact', {
         message: email
       })
       .then(res => {

@@ -3,39 +3,13 @@ const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const path = require('path');
 
+const mail = require('./routes/api/mail');
+
 const app = express();
 
 // Body Parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-let transporter = nodemailer.createTransport({
-  service: 'gmail',
-  secure: false,
-  port: 25,
-  auth: {
-    user: 'cartoplasticweb@gmail.com',
-    pass: require('./config/keys').nodemailer
-  },
-  tls: {
-    rejectUnauthorized: false
-  }
-});
-
-app.post('/contact', (req, res) => {
-  let helperOptions = {
-    from: '"Cartoplastic Web" <cartoplasticweb@gmail.com>',
-    to: 'cartoplasticweb@gmail.com',
-    subject: 'Nuevo Mensaje en el Website',
-    text: req.body.message
-  };
-  transporter.sendMail(helperOptions, (error, info) => {
-    if (error) console.log(error);
-    console.log('Mail sent');
-  });
-
-  return res.status(200).json({ msg: 'Message sent' });
-});
 
 if (process.env.NODE_ENV == 'production') {
   app.use(express.static('client/build'));
@@ -44,6 +18,8 @@ if (process.env.NODE_ENV == 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
+
+app.use('/api/mail', mail);
 
 const port = process.env.PORT || 5000;
 
