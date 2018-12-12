@@ -21,8 +21,6 @@ let transporter = nodemailer.createTransport({
   }
 });
 
-app.get('/', (req, res) => res.send('hello'));
-
 app.post('/contact', (req, res) => {
   let helperOptions = {
     from: '"Cartoplastic Web" <cartoplasticweb@gmail.com>',
