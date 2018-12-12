@@ -14,7 +14,7 @@ let transporter = nodemailer.createTransport({
   port: 25,
   auth: {
     user: 'cartoplasticweb@gmail.com',
-    pass: 'ramon100696'
+    pass: require('./config/keys').nodemailer
   },
   tls: {
     rejectUnauthorized: false
