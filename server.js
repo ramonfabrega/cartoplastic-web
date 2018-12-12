@@ -32,8 +32,7 @@ app.post('/contact', (req, res) => {
   };
   transporter.sendMail(helperOptions, (error, info) => {
     if (error) console.log(error);
-    console.log('Message sent');
-    console.log(info);
+    console.log('Mail sent');
   });
 
   return res.status(200).json({ msg: 'Message sent' });
