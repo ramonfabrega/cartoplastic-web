@@ -95,12 +95,7 @@ export default {
     }
   },
   'Aislantes de calor para vasos': {
-    images: [
-      {
-        original: rompecabezas,
-        thumbnail: ''
-      }
-    ],
+    images: [],
     colors: null,
     info: {
       cards: null,
