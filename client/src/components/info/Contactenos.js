@@ -128,11 +128,11 @@ class Contactenos extends Component {
           <img src={location} alt='' style={{ width: '70%' }} />
         </Grid>
         <Grid item md>
-          <Grid container alignItems='center'>
-            <Grid item md={8}>
+          <Grid container alignItems='center' style={{ margin: 24 }}>
+            <Grid item xs md={8}>
               <Typography variant='h2'>Contáctenos</Typography>
             </Grid>
-            <Grid item md={4}>
+            <Grid item xs md={4}>
               <Button
                 className={classes.button}
                 disabled={!canSubmit}
@@ -169,7 +169,7 @@ class Contactenos extends Component {
           <Paper className={classes.paper}>
             <form noValidate autoComplete='off'>
               <Grid container spacing={16}>
-                <Grid item md={6}>
+                <Grid item xs={12} md={6}>
                   <TextField
                     required
                     label='Empresa'
@@ -179,7 +179,7 @@ class Contactenos extends Component {
                     margin='normal'
                   />
                 </Grid>
-                <Grid item md={6}>
+                <Grid item xs={12} md={6}>
                   <TextField
                     required
                     label='Nombre completo'
@@ -189,7 +189,7 @@ class Contactenos extends Component {
                     margin='normal'
                   />
                 </Grid>
-                <Grid item md={6}>
+                <Grid item xs={12} md={6}>
                   <TextField
                     required
                     label='Teléfono'
@@ -199,7 +199,7 @@ class Contactenos extends Component {
                     margin='normal'
                   />
                 </Grid>
-                <Grid item md={6}>
+                <Grid item xs={12} md={6}>
                   <TextField
                     label='Fax'
                     value={this.state.fax}
@@ -208,7 +208,7 @@ class Contactenos extends Component {
                     margin='normal'
                   />
                 </Grid>
-                <Grid item md={6}>
+                <Grid item xs={12} md={6}>
                   <TextField
                     required
                     label='Correo electrónico'
@@ -218,7 +218,7 @@ class Contactenos extends Component {
                     margin='normal'
                   />
                 </Grid>
-                <Grid item md={6}>
+                <Grid item xs={12} md={6}>
                   <TextField
                     select
                     required
@@ -236,7 +236,7 @@ class Contactenos extends Component {
                     ))}
                   </TextField>
                 </Grid>
-                <Grid item md={12}>
+                <Grid item xs={12}>
                   <TextField
                     required
                     multiline

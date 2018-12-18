@@ -29,7 +29,7 @@ export default ({ colorData }) => {
     });
 
     colorView.push(
-      <Grid item xs key={key}>
+      <Grid item xs={6} sm key={key} style={{ marginTop: 10 }}>
         <Grid container>{colorsList}</Grid>
       </Grid>
     );
