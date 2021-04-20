@@ -12,14 +12,14 @@ export default () => {
               variant='h5'
               color='inherit'
               component={Link}
-              to='/'
+              to='/productos/folders'
               style={{ textDecoration: 'none' }}
             >
               Cartoplastic, S.A.
             </Typography>
           </Grid>
           <Grid item>
-            <Button color='inherit' component={Link} to='/'>
+            <Button color='inherit' component={Link} to='/productos/folders'>
               Inicio
             </Button>
             <Button color='inherit' component={Link} to='/conozcanos'>

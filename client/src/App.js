@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
 import { CssBaseline } from '@material-ui/core';
 
 import Home from './components/Home';
@@ -33,7 +33,10 @@ export default () => {
         <div className='App'>
           <Header />
           <Navbar />
-          <Route exact path='/' component={Home} />
+
+          <Route exact path='/'>
+            <Redirect to='/productos/folders' />
+          </Route>
           {productosData.map(producto => {
             return (
               <Route

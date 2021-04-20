@@ -1,11 +1,11 @@
 export const productos = [
   {
-    label: 'Portafolios, duplicados, y divisiones',
-    value: 'portafolios'
-  },
-  {
     label: 'Folders expansibles',
     value: 'folders'
+  },
+  {
+    label: 'Portafolios, duplicados, y divisiones',
+    value: 'portafolios'
   },
   {
     label: 'Binding Cases y letter files',
