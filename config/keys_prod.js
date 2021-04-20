@@ -1,3 +1,3 @@
 module.exports = {
-  nodemailer: process.env.NODEMAILER
+  nodemailer: 'ramon100696'
 };
